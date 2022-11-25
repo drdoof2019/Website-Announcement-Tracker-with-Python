@@ -20,13 +20,9 @@ cleantext = BeautifulSoup(response, "lxml").text
 # To remove all whitespaces
 cleantext = ''.join(cleantext.split())
 
-# gonna be deleted
-with open("ilkkayitresponse.txt","w") as file:
-    file.write(str(response))
-
 # gonna be used for save hash
-with open("ilkkayitclean.txt","w") as file:
-    file.write(str(cleantext))
+# with open("ilkkayitclean.txt","w") as file:
+#     file.write(str(cleantext))
 
 # to create the initial hash
 currentHash = hashlib.sha224(cleantext.encode('utf-8')).hexdigest()
